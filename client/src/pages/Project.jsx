@@ -3,6 +3,8 @@ import { useQuery } from '@apollo/client';
 import { GET_PROJECT } from '../queries/projectQueries';
 import Spinner from '../components/Spinner';
 import ClientInfo from '../components/ClientInfo';
+import DeleteProjectButton from '../components/DeleteProjectButton';
+import EditProjectForm from '../components/EditProjectForm';
 
 
 export default function Project() {
@@ -31,9 +33,9 @@ export default function Project() {
 
           <ClientInfo client={data.project.client} />
 
-          {/* <EditProjectForm project={data.project} /> */}
+          <EditProjectForm project={data.project} />
 
-          {/* <DeleteProjectButton projectId={data.project.id} /> */}
+          <DeleteProjectButton projectId={data.project.id} />
         </div>
       )}
     </>
